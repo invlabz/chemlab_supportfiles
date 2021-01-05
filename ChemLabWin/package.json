@@ -1,0 +1,75 @@
+{
+  "name": "ChemLab",
+  "version": "0.0.1",
+  "description": "A virtual chemistry lab for intermediate students",
+  "repository": "pamrulla/chemlab_supportfiles",
+  "main": "main.js",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "update-electron-app": "^2.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
+    "electron": "^10.1.5"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "keywords": [],
+  "author": "Patan Amrulla Khan",
+  "license": "ISC",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./icontextlogo_WWZ_icon.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "setupExe": "ChemLabSetup.exe",
+            "name": "ChemLab",
+            "setupIcon": "./icontextlogo_WWZ_icon.ico",
+            "iconUrl": "https://github.com/pamrulla/ChemLab/blob/master/Assets/WebGLTemplates/mine/TemplateData/g1004.png"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "authToken": "18ced359234cfb281c65a06168f141872cb12fec",
+            "repository": {
+              "owner": "pamrulla",
+              "name": "chemlab_supportfiles"
+            },
+            "prerelease": false
+          }
+        }
+      ]
+    }
+  }
+}
