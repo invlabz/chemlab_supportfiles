@@ -37,7 +37,7 @@ function createWindow () {
 
       dialog.showMessageBox(dialogOpts).then(({ response }) => {
         if (response === 0) {
-          require("electron").shell.openExternal("https://github.com/pamrulla/chemlab_supportfiles/releases/latest/download/ChemLabSetup.exe").then(() => {
+          require("electron").shell.openExternal("https://github.com/invlabz/chemlab_supportfiles/releases/latest/download/ChemLabSetup.exe").then(() => {
             app.exit(0)
           });
         }
